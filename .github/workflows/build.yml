@@ -2,7 +2,7 @@ name: Build APK
 
 on:
   push:
-    branches: [ main, master, arena/f145ee70-cholobotar-3 ]
+    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
