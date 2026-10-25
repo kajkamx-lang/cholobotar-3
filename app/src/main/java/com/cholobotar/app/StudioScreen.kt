@@ -264,7 +264,7 @@ fun StudioTopBar(
                     DropdownMenuItem(
                         text = { Text("${r}p") },
                         onClick = {
-                            vm.setRecRes(i)
+                            vm.updateRecRes(i)
                             menu = false
                         }
                     )

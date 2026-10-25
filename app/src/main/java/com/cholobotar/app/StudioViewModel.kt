@@ -299,11 +299,11 @@ class StudioViewModel(private val app: Application) : AndroidViewModel(app) {
         bounce.frequency = bounceSpeed
     }
 
-    fun setBounceOn(v: Boolean) { bounceOn = v; prefs.edit().putBoolean("bounceOn", v).apply(); applyBounce() }
-    fun setBounceAmount(v: Float) { bounceAmount = v; prefs.edit().putFloat("bounceAmount", v).apply(); applyBounce() }
-    fun setBounceSpeed(v: Float) { bounceSpeed = v; prefs.edit().putFloat("bounceSpeed", v).apply(); applyBounce() }
-    fun setShakeOn(v: Boolean) { shakeOn = v; prefs.edit().putBoolean("shakeOn", v).apply(); applyBounce() }
-    fun setBlinkOn(v: Boolean) { blinkOn = v; prefs.edit().putBoolean("blinkOn", v).apply() }
+    fun updateBounceOn(v: Boolean) { bounceOn = v; prefs.edit().putBoolean("bounceOn", v).apply(); applyBounce() }
+    fun updateBounceAmount(v: Float) { bounceAmount = v; prefs.edit().putFloat("bounceAmount", v).apply(); applyBounce() }
+    fun updateBounceSpeed(v: Float) { bounceSpeed = v; prefs.edit().putFloat("bounceSpeed", v).apply(); applyBounce() }
+    fun updateShakeOn(v: Boolean) { shakeOn = v; prefs.edit().putBoolean("shakeOn", v).apply(); applyBounce() }
+    fun updateBlinkOn(v: Boolean) { blinkOn = v; prefs.edit().putBoolean("blinkOn", v).apply() }
 
     // ───────── mic ─────────
     fun setMic(on: Boolean) {
@@ -424,7 +424,7 @@ class StudioViewModel(private val app: Application) : AndroidViewModel(app) {
 
     fun playSfx(item: SfxItem) = sfx.play(item.path)
 
-    fun setSfxVolume(v: Float) {
+    fun updateSfxVolume(v: Float) {
         sfxVolume = v
         sfx.volume = v
         prefs.edit().putFloat("sfxVol", v).apply()
@@ -436,25 +436,25 @@ class StudioViewModel(private val app: Application) : AndroidViewModel(app) {
     }
 
     // ───────── recording ─────────
-    fun setRecRes(i: Int) {
+    fun updateRecRes(i: Int) {
         if (recording) return
         recRes = i
         prefs.edit().putInt("recRes", i).apply()
     }
 
-    fun setRecFormat(i: Int) {
+    fun updateRecFormat(i: Int) {
         if (recording) return
         recFormat = i
         prefs.edit().putInt("recFormat", i).apply()
     }
 
-    fun setRecFps(v: Int) {
+    fun updateRecFps(v: Int) {
         if (recording) return
         recFps = v
         prefs.edit().putInt("recFps", v).apply()
     }
 
-    fun setShowGuide(v: Boolean) {
+    fun updateShowGuide(v: Boolean) {
         showGuide = v
         prefs.edit().putBoolean("guide", v).apply()
     }
